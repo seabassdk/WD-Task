@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row h-100">
+    <div class="col-md-3 menu">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Job Ads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">Proposals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9 mt-3">
+      <h3 class="ml-3">Proposals</h3>
+      <ngb-tabset class="nav-fill">
+        <ngb-tab title="Pending">
+          <ng-template ngbTabContent>
+            <!-- Heading for proposals -->
+            <div class="row mb-3 mt-3">
+              <div class="col">User Name</div>
+              <div class="col px-auto">Boat Type</div>
+              <div class="col">Service </div>
+              <div class="col">Location </div>
+              <div class="col">Job Type </div>
+              <div class="col"> </div>
+              <div class="col"> </div>
+            </div>
+            <!-- loop through all the pending proposals -->
+            <div class="row proposals" *ngFor="let proposal of pendingProposals; let i = index">
+              <div class="col">some name</div>
+              <div class="col px-auto">{{proposal.boatType}} </div>
+              <div class="col">{{proposal.service}}  </div>
+              <div class="col">{{proposal.location}}  </div>
+              <div class="col">{{proposal.jobType}}  </div>
+              <div class="col">
+                <button (click)="updateProposal(i, true)"
+                  type="button" class="btn btn-success btn-sm">Accept</button>
+              </div>
+              <div class="col"> <button (click)="updateProposal(i, false)" 
+                  type="button" class="btn btn-danger btn-sm">Reject</button> </div>
+            </div>
+
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab title="Accepted">
+          <ng-template ngbTabContent>
+            <p>Tab Accepted Proposals</p>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab title="Completed">
+          <ng-template ngbTabContent>
+            <p>Tab Completed Proposals</p>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab title="Declined">
+          <ng-template ngbTabContent>
+            <p>Tab Declined Proposals</p>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab title="Cancelled">
+          <ng-template ngbTabContent>
+            <p>Tab Cancelled Proposals</p>
+          </ng-template>
+        </ngb-tab>
+
+      </ngb-tabset>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+
+     <div class="col-md-6">
+
+      <h1 class="form-signin-heading">Your profile</h1>
+
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Full name</label>
+          <p class="form-control-static">{{ details?.name }}</p>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email</label>
+          <p class="form-control-static">{{ details?.email }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div> -->
