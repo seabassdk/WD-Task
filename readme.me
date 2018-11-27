@@ -1,0 +1,37 @@
+$project
+========
+
+The project consists of a back end and a front end to allow a user
+to accept or reject proposals.
+
+Example
+--------
+On the landing page, the user logs in with the default user credentials. Or
+can create a new user by following the registration link.
+When the credentials have been confirmed, the user is redirected to the
+profile page where the a list of proposals that are pending can be observed.
+The user clicks the respective 'accept' or 'reject' buttons to change the status
+of the proposals in the database.
+The proposals changed by the user disappear from the pending list.
+
+
+Features
+--------
+
+- The front end is built on the Angular 7 framework
+- The back end implementd NodeJs with ExpressJS' router middleware
+- For auhtentication Passport middleware is used
+- the database uses MongoDb in the cloud
+
+Installation
+------------
+
+Install $project by running:
+
+-install all the node dependencies.
+-The front end runs on 'ng serve'.
+-The back-end runs with 'nodemon'.
+
+-The mock data script has been run and proposals have been added to the db.
+-There is a built-in user for quick access to the functionality. More can
+be added by the following the links.
